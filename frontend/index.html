@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Messenger Forensic Analyzer</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("mfa.theme"); } catch (e) { }
+      if (t !== "light" && t !== "dark") t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <div class="app">
+    <header class="titlebar">
+      <a class="product" href="#/">Messenger Forensic Analyzer</a>
+      <span class="tb-sep"></span>
+      <span class="tb-label">케이스</span>
+      <button class="tb-case" id="case-name" title="케이스 개요">-</button>
+      <div class="tz-toggle" id="tz-toggle" title="시각 표시 기준"></div>
+      <div class="tz-toggle theme-toggle" id="theme-toggle" title="화면 테마"></div>
+      <button class="tb-btn" id="new-case">새 케이스…</button>
+    </header>
+
+    <nav class="navpane" id="nav"></nav>
+
+    <main class="view" id="view"></main>
+
+    <footer class="statusbar">
+      <span class="sb-msg" id="status-msg">준비</span>
+      <span class="sb-info" id="status-case"></span>
+    </footer>
+  </div>
+
+  <div class="modal-back" id="modal" hidden></div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

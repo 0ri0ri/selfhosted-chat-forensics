@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 업로드된 증거물 및 분석 결과 (민감 데이터)
+workspace/
+
+# scripts/make_samples.py 가 만드는 가짜 샘플
+samples/client_*.zip
+samples/server_*.zip
+
+# 편집기·OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
